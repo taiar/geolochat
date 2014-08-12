@@ -1,0 +1,26 @@
+<script>
+  navigator.geolocation.getCurrentPosition(function (position) {
+    _lat = position.coords.latitude;
+    _long = position.coords.longitude;
+    
+    setll = function (callback, l, ll) {
+      request = new XMLHttpRequest();
+      request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+          console.log(request.responseText);
+          callback(request.responseText);
+        }
+      };
+      request.open('POST', '/session', true);
+      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+      request.send("lat=" + l + "&long=" + ll);      
+    }
+    
+    function redir() {
+      window.location = '/chat'
+    }
+    
+    setll(redir, _lat, _long);
+
+  });
+</script>
