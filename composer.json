@@ -1,6 +1,7 @@
 {
   "require": {
     "silex/silex": "~1.2",
+    "illuminate/database": "4.1.*",
     "davedevelopment/phpmig": "*",
     "pimple/pimple": "1.*"
   },
