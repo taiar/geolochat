@@ -1,5 +1,10 @@
 {
-    "require": {
-        "silex/silex": "~1.2"
-    }
+  "require": {
+    "silex/silex": "~1.2",
+    "davedevelopment/phpmig": "*",
+    "pimple/pimple": "1.*"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  }
 }
